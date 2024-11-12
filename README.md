@@ -1,4 +1,4 @@
-# Fast & Reckless Bank backend
+# Fast & Reckless Bank app
 
 My solution for Company Shield's technical test.
 
