@@ -2,6 +2,10 @@ import { useContext, useRef } from "react"
 import { GlobalContext } from "./App"
 
 const AccountCreation = () => {
+    const apiURL = import.meta.env.VITE_serverURL
+    const accountsCreationEndpoint = import.meta.env
+        .VITE_accountCreationEndpoint
+
     const accountName = useRef()
 
     const { fetchAccounts } = useContext(GlobalContext)
@@ -16,7 +20,7 @@ const AccountCreation = () => {
             accountName: accountName.current.value,
         })
 
-        fetch(`http://localhost:8080/api/accounts/create?${params}`, {
+        fetch(`${apiURL}${accountsCreationEndpoint}?${params}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
